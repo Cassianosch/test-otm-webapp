@@ -6,7 +6,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { StudentData, StudentFormData } from '../../../../interfaces/student';
 import { FormInput } from '../../../../components/Form/Input';
 import { FormInputCurrency } from '../../../../components/Form/Input/Currency';
-// import { FormSelect } from '../../../../components/Form/Select';
 import { extractCurrencyInputValue } from '../../../../utils/helpers';
 
 const studentFormSchema: yup.SchemaOf<StudentFormData> = yup.object().shape({

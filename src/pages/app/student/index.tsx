@@ -5,7 +5,7 @@ import { StudentForm } from './form';
 import { Table } from '../../../components/Table';
 import { StudentData } from '../../../interfaces/student';
 import useStudent from '../../../hooks/useStudent';
-import { formatterCurrencyDolar, formatterDate } from '../../../utils/helpers';
+import { formatterCurrencyEuro, formatterDate } from '../../../utils/helpers';
 
 export const StudentPage = (): JSX.Element => {
     const [editing, setEditing] = useState<StudentData | null>(null);
@@ -56,7 +56,7 @@ export const StudentPage = (): JSX.Element => {
                     ),
                     price: (value) => (
                         <Text as="span" fontWeight="normal">
-                            {formatterCurrencyDolar.format(value)}
+                            {formatterCurrencyEuro(Number(value))}
                         </Text>
                     ),
                 }}

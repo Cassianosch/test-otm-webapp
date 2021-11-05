@@ -7,7 +7,7 @@ type SimpleType = {
 const getTable = () => screen.queryByTestId('table');
 
 describe('<Table />', () => {
-    it.only('if has no data table shouldnt appear', async () => {
+    it('if has no data table shouldnt appear', async () => {
         await act(async () => {
             render(
                 <WideTable<SimpleType>

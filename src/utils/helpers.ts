@@ -30,10 +30,9 @@ export const serviceErrorHandler = (err: AxiosError): string => {
     return JSON.stringify(err);
 };
 
-export const formatterCurrencyDolar = new Intl.NumberFormat('de-DE', {
-    style: 'currency',
-    currency: 'EUR',
-});
+export const formatterCurrencyEuro = (num) =>
+    `${num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} €`;
+
 export const formatterDate = new Intl.DateTimeFormat('pt-BR', {
     year: 'numeric',
     month: '2-digit',

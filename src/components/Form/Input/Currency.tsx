@@ -55,12 +55,12 @@ const InputCurrencyBase: ForwardRefRenderFunction<
             )}
             <Input
                 as={InputCurrency}
-                placeholder="0,00 €"
+                placeholder="0.00 €"
                 suffix=" €"
                 decimalScale={2}
                 fixedDecimalScale
-                thousandSeparator="."
-                decimalSeparator=","
+                thousandSeparator=","
+                decimalSeparator="."
                 {...commonInputProps}
                 ref={ref}
                 {...rest}
