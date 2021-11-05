@@ -49,7 +49,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps): JSX.Element => {
                                 borderLeftColor="studentapi.primary.500"
                                 boxShadow={
                                     isActive &&
-                                    'inset 19px 0 30px -22px #FFBD59'
+                                    'inset 19px 0 30px -22px #00c1b1'
                                 }
                                 _hover={{
                                     color: 'studentapi.variants.darkGrey',

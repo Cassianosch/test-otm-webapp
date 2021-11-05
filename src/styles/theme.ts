@@ -33,9 +33,9 @@ const theme = extendTheme({
     colors: {
         studentapi: {
             primary: {
-                300: '#FFEED5',
-                500: '#FFBD59',
-                700: '#FF9A02',
+                300: '#00c1b1',
+                500: '#29c5b8',
+                700: '#7ac7c0',
             },
             secondary: {
                 500: '#0F0F0F',
