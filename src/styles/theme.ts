@@ -54,7 +54,6 @@ const theme = extendTheme({
             variants: {
                 'form-submit': {
                     bgColor: 'studentapi.primary.500',
-                    borderRadius: '50',
                     padding: '1.4rem 4rem',
                     color: 'white',
                     fontWeight: '400',
@@ -69,7 +68,6 @@ const theme = extendTheme({
                 },
                 delete: {
                     bgColor: 'red.500',
-                    borderRadius: '50',
                     padding: '1.4rem 4rem',
                     color: 'white',
                     fontWeight: '400',
