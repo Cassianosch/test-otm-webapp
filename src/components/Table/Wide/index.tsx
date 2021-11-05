@@ -47,7 +47,10 @@ export function WideTable<T>(props: TableProps<T>): JSX.Element {
                     </Flex>
                 </Button>
             )}
-            <Table variant="striped" colorScheme="blackAlpha">
+            <Table
+                variant="striped"
+                colorScheme="blackAlpha"
+                datat-testid="table">
                 <TableHead<T>
                     isMainCheckboxChecked={isMainCheckboxChecked}
                     handleToggleMainCheckbox={handleToggleMainCheckbox}

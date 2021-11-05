@@ -98,7 +98,9 @@ export const StudentForm = (props: StudentFormProps): JSX.Element => {
             onSubmit={handleSubmit(onSubmit)}
             templateColumns="repeat(6, 1fr)"
             gridColumnGap="4"
-            gridGap="4">
+            gridGap="4"
+            role="form"
+            data-testid="form">
             <GridItem colSpan={{ base: 6, sm: 3 }}>
                 <FormInput
                     name="first_name"
@@ -174,7 +176,8 @@ export const StudentForm = (props: StudentFormProps): JSX.Element => {
                             type="button"
                             colorScheme="blue"
                             variant="ghost"
-                            onClick={() => setEditing(null)}>
+                            onClick={() => setEditing(null)}
+                            data-testid="btn-reset">
                             <Text fontSize="sm" fontWeight="normal">
                                 Cancel edit
                             </Text>
@@ -183,7 +186,8 @@ export const StudentForm = (props: StudentFormProps): JSX.Element => {
                     <Button
                         type="submit"
                         variant="form-submit"
-                        isLoading={isSubmitting}>
+                        isLoading={isSubmitting}
+                        data-testid="btn-submit">
                         <Text>Save</Text>
                     </Button>
                 </Flex>

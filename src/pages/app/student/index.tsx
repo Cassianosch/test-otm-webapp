@@ -3,7 +3,7 @@ import { Flex, Heading, Text } from '@chakra-ui/react';
 import { Container } from '../../../components/Layout';
 import { StudentForm } from './form';
 import { Table } from '../../../components/Table';
-import { StudentFormData, StudentData } from '../../../interfaces/student';
+import { StudentData } from '../../../interfaces/student';
 import useStudent from '../../../hooks/useStudent';
 import { formatterCurrencyDolar, formatterDate } from '../../../utils/helpers';
 
