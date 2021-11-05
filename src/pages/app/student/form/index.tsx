@@ -13,12 +13,16 @@ const studentFormSchema: yup.SchemaOf<StudentFormData> = yup.object().shape({
     last_name: yup.string().required('Last name is mandatory'),
     birthday: yup.string().required('Birthday is mandatory'),
     course: yup.string().required('Course is mandatory'),
-    hour: yup.number().min(1).required('Hour is mandatory'),
+    hour: yup
+        .number()
+        .typeError('Hour must be a number')
+        .min(1)
+        .required('Hour is mandatory'),
     price: yup
         .number()
         .min(0.01)
         .required('Price is mandatory')
-        .typeError('Price is mandatory'),
+        .typeError('Price must be a number'),
 });
 
 interface StudentFormProps {
@@ -44,24 +48,14 @@ export const StudentForm = (props: StudentFormProps): JSX.Element => {
         resolver: yupResolver(studentFormSchema),
     });
 
-    const handleReset = useCallback(() => {
-        reset();
-        setValue('first_name', '');
-        setValue('last_name', '');
-        setValue('birthday', '');
-        setValue('course', '');
-        setValue('hour', 0);
-        setValue('price', 0);
-    }, [reset, setValue]);
-
     const onSubmit = useCallback<SubmitHandler<StudentFormData>>(
         async (data) => {
             try {
                 if (editing) await handleUpdate(editing.id, data);
                 else await handleCreate(data);
-
-                handleReset();
                 setEditing(null);
+                setValue('price', 0);
+                reset();
             } catch (err) {
                 toast({
                     status: 'error',
@@ -71,7 +65,15 @@ export const StudentForm = (props: StudentFormProps): JSX.Element => {
                 });
             }
         },
-        [editing, handleCreate, handleReset, handleUpdate, setEditing, toast],
+        [
+            editing,
+            handleCreate,
+            handleUpdate,
+            reset,
+            setEditing,
+            setValue,
+            toast,
+        ],
     );
 
     useEffect(() => {
@@ -156,12 +158,13 @@ export const StudentForm = (props: StudentFormProps): JSX.Element => {
                             name="price"
                             label="Price"
                             error={errors.price}
+                            autoComplete="off"
                             {...field}
                             onChange={handleChangePrice}
                         />
                     )}
-                    name="price"
                     control={control}
+                    name="price"
                 />
             </GridItem>
             <GridItem colSpan={6}>

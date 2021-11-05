@@ -56,7 +56,7 @@ export const StudentPage = (): JSX.Element => {
                     ),
                     price: (value) => (
                         <Text as="span" fontWeight="normal">
-                            {formatterCurrencyEuro(Number(value))}
+                            {formatterCurrencyEuro.format(Number(value))}
                         </Text>
                     ),
                 }}

@@ -59,8 +59,8 @@ const InputCurrencyBase: ForwardRefRenderFunction<
                 suffix=" €"
                 decimalScale={2}
                 fixedDecimalScale
-                thousandSeparator=","
-                decimalSeparator="."
+                thousandSeparator="."
+                decimalSeparator=","
                 {...commonInputProps}
                 ref={ref}
                 {...rest}
