@@ -17,7 +17,7 @@ export const EmptyComponent = (): JSX.Element => (
             fill="#91908F"
         />
         <Text color="#91908F" fontSize="xl" mt="-4">
-            Nenhum registro encontrado
+            No data
         </Text>
     </Flex>
 );
