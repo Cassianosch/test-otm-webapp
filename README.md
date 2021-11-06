@@ -1,6 +1,7 @@
 # Check how it works
 
 [WEBAPP - Netlify](https://test-otm-student.netlify.app/)
+[Video - Loom - Pass: otm](https://www.loom.com/share/6ce6dfb971e74dc1b5df976bc2d61dbc)
 
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
