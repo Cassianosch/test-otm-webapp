@@ -35,11 +35,15 @@ export const formatterCurrencyEuro = new Intl.NumberFormat('de-DE', {
     currency: 'EUR',
 });
 
-export const formatterDate = new Intl.DateTimeFormat('pt-BR', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-});
+export const formatterDate = (date: string): string => {
+    const newDate = new Date(`${date}T00:00:00`);
+    const pad = function (num) {
+        return `00${num}`.slice(-2);
+    };
+    return `${pad(newDate.getDate())}/${pad(
+        newDate.getMonth() + 1,
+    )}/${newDate.getFullYear()}`;
+};
 export const extractCurrencyInputValue = (masked: string): number => {
     const numericValue = Number(
         masked.replace(/([^,\d])/g, '').replace(/,/g, '.'),

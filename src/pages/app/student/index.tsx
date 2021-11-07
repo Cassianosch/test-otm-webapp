@@ -46,7 +46,7 @@ export const StudentPage = (): JSX.Element => {
                 customRenderers={{
                     birthday: (value) => (
                         <Text as="span" fontWeight="normal">
-                            {formatterDate.format(new Date(value))}
+                            {formatterDate(value)}
                         </Text>
                     ),
                     hour: (value) => (
